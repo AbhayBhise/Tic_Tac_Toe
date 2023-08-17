@@ -67,6 +67,7 @@ reset.addEventListener('click', () => {
 function defaultAct() {
     music.pause();
     document.querySelectorAll('.link')[0].setAttribute('href', 'style.css');
+    audioTurn = new Audio('Pencil.mp3');
     document.querySelector('audio').setAttribute('src', 'BGM.mp3');
     def = document.querySelector('audio');
     def.play();
