@@ -66,17 +66,20 @@ reset.addEventListener('click', () => {
 
 function defaultAct() {
     music.pause();
+    localStorage.clear();
     audioTurn = new Audio('Pencil.mp3');
     document.querySelectorAll('.link')[0].setAttribute('href', 'style.css');
     document.querySelector('audio').setAttribute('src', 'BGM.mp3');
-    document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "0";
+   document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "0";
     def = document.querySelector('audio');
     def.play();
     def.loop();
     document.body.style.background = "white";
+    
 }
 function starWars() {
     music.pause();
+    localStorage.clear();
     document.querySelectorAll('.link')[0].setAttribute('href', 'style2.css');
     audioTurn = new Audio('lightsaber-sound.mp3');
     document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "0";
@@ -89,6 +92,7 @@ function starWars() {
 
 function strangerThings() {
     music.pause();
+    localStorage.clear();
     document.querySelectorAll('.link')[0].setAttribute('href', 'style3.css');
     audioTurn = new Audio('can.mp3');
     document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "0";
@@ -100,6 +104,7 @@ function strangerThings() {
 }
 function harryPotter() {
     music.pause();
+    localStorage.clear();
     document.querySelectorAll('.link')[0].setAttribute('href', 'style4.css');
     audioTurn = new Audio('wingardium-leviosa-2.mp3');
     document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "0";
