@@ -69,11 +69,11 @@ function defaultAct() {
     document.querySelectorAll('.link')[0].setAttribute('href', 'style.css');
     audioTurn = new Audio('Pencil.mp3');
     document.querySelector('audio').setAttribute('src', 'BGM.mp3');
+    document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "0";
     def = document.querySelector('audio');
     def.play();
     def.loop();
     document.body.style.background = "white";
-    document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "0";
 }
 function starWars() {
     music.pause();
