@@ -194,13 +194,18 @@ padding:2px;
         text-align:center;
         }
 }
-@media screen and (max-width: 1596px){
+@media  (max-width: 1596px) {
     body{
+
         background-repeat: center center;
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-image: url('STbackground.jpg');
+
+    }
+    .imgBox  img {
+        max-width: 190px;
     }
 }
 @media (max-width:1000px) {
@@ -214,7 +219,7 @@ padding:2px;
     }
         nav{
         width:100%;
-        font-size:-20%;
+            font-size:-20%;
     }
         .navul {
     font-size:-20%;
