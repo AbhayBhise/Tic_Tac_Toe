@@ -193,4 +193,12 @@ nav {
         .navul {
     font-size:-20%;
     }
+    .navul li {
+font-size:16px;
+padding:2px;
+                    
+}
+.left{
+        text-align:center;
+        }
 }
