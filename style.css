@@ -112,8 +112,9 @@
             font-size: 25px;
             font-weight: bold;
         }
-@media screen and (max-width: 665px){
+@media screen and (max-width: 1000px){
     .gameContainer{
+            margin-top:10pxl
         flex-wrap: wrap;
     }
     .gameInfo{
@@ -126,7 +127,7 @@
         font-size: medium;
     }
     .navul li{
-        font-size: smaller;
+        font-size: 16px;
     }
     .item{
         padding: 2px;
@@ -134,16 +135,14 @@
 
     }
     nav h1{
-        font-size: smaller;
+        font-size: 16px;
     }
     .container{
         display: grid;
         grid-template-rows: repeat(3, 20vw);
         grid-template-columns: repeat(3, 20vw);
     }
-}
-@media (max-width:1000px) {
-    nav{
+            nav{
         width:100%;
             font-size:-20%;
     }
@@ -155,5 +154,4 @@ padding:2px;
 .left{
         text-align:center;
         }
-                
 }
