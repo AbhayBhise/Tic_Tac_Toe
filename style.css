@@ -112,16 +112,11 @@
             font-size: 25px;
             font-weight: bold;
         }
-@media screen and (max-width: 665px) {
-            .gameContainer{
-            margin-top:10px;
-        flex-wrap: wrap;
-    }
-}
+
 @media screen and (max-width: 1000px){
     .gameContainer{
-            margin-top:10px;
         flex-wrap: wrap;
+            margin-top:10px;
     }
     .gameInfo{
         margin-top: 40px;
@@ -154,7 +149,7 @@
             font-size:-20%;
     }
 .navul li {
-font-size:16px;
+font-size:10px;
 padding:2px;
                     
 }
