@@ -60,6 +60,7 @@ reset.addEventListener('click', () => {
     isgameOver = false;
     document.getElementsByClassName("info")[0].innerText = "Turn of " + turn;
     document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "0";
+     document.querySelector('.imgBox').getElementsByTagName('img')[0].style.transitionDelay= "1s";
 });
 
 
