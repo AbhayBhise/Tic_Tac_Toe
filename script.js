@@ -70,6 +70,7 @@ function defaultAct() {
     document.querySelectorAll('.link')[0].setAttribute('href', 'style.css');
     audioTurn = new Audio('Pencil.mp3');
    document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "0";
+    document.querySelector('.img').setAttribute('src', 'minion-congrats.gif');
     document.querySelector('audio').setAttribute('src', 'BGM.mp3');
     def = document.querySelector('audio');
     def.play();
