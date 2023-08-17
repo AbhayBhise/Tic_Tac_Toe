@@ -112,7 +112,12 @@
             font-size: 25px;
             font-weight: bold;
         }
-
+@media screen and (max-width: 665px){
+            .gameContainer{
+        flex-wrap: wrap;
+            margin-top:100px;
+    }
+}
 @media screen and (max-width: 1000px){
     .gameContainer{
         flex-wrap: wrap;
