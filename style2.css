@@ -186,4 +186,7 @@ nav {
         background-attachment: fixed;
         background-image: url('SWmobile.jpg');
     }
+        nav{
+        width:100%;
+    }
 }
