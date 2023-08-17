@@ -178,4 +178,8 @@
         background-attachment: fixed;
         background-image: url('HPmobile.jpg');
     }
+    nav{
+        width:100%;
+    }
+        
 }
