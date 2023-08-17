@@ -1,0 +1,181 @@
+@font-face {
+    font-family: HP;
+    src: url(HarryPotterFont.ttf);
+}
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: HP;
+            background-image: url('HPbackground.jpg');
+            background-repeat: no-repeat;
+            background-size:100%;
+            color: goldenrod;
+            -webkit-text-stroke: 0.3px rgb(114, 97, 0);
+        }
+        .audio{
+            display: none;
+        }
+        /* start of header */
+        header {
+            position: fixed;
+            top: 0;
+            display: block;
+            width: 100%;
+
+
+        }
+
+        nav {
+            
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background: linear-gradient(skyblue, white, skyblue);
+
+        }
+        .left h1{
+            margin: 0;
+            font-size: 25px;
+        }
+
+        .navul {
+            font-size: 20px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item {
+            margin: 5px;
+            padding: 5px;
+            background-color: transparent;
+            list-style: none;
+            cursor: pointer;
+        }
+
+
+        /* end of header */
+        /* start of main */
+        .gameContainer {
+
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-rows: repeat(3, 10vw);
+            grid-template-columns: repeat(3, 10vw);
+        }
+
+        .box {
+            border: 2px solid skyblue;
+            font-size: 8vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Patrick Hand SC', cursive;
+        }
+
+        .box:hover {
+            background: linear-gradient(white, rgba(137, 255, 255, 0.349));
+
+            cursor: url('wand.cur') ;
+
+        }
+
+        .gameInfo {
+            text-align: center;
+            padding: 0 34px;
+        }
+
+        .imgBox img {
+            width: 0; 
+            transition: width 1s ease-in-out;
+        }
+
+        .br-0 {
+            border-right: 0;
+        }
+
+        .bl-0 { 
+            border-left: 0;
+        }
+
+        .bt-0 {
+            border-top: 0;
+        }
+
+        .bb-0 {
+            border-bottom: 0;
+        }
+        #reset{
+            margin: 10px 10px;
+            padding: 5px 10px;
+            font-size: 20px;
+            font-weight:bold;
+            font-family: HP;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 10px;
+            background-color: aqua;
+            border: none;
+            outline: none;
+        }
+        .info{
+            font-size: 25px;
+            font-weight: bold;
+        }
+@media screen and (max-width: 665px){
+    .gameContainer{
+        flex-wrap: wrap;
+    }
+    .gameInfo{
+        margin-top: 40px;
+    }
+    .gameInfo h1{
+        font-size:1.5rem;
+    }
+    .info{
+        font-size: medium;
+    }
+    .navul li a{
+        font-size: smaller;
+    }
+    .item{
+        padding: 2px;
+        width: fit-content;
+        
+    }
+    nav h1{
+        font-size: smaller;
+    }
+    .container{
+        display: grid;
+        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 20vw);
+    }
+}
+@media screen and (max-width: 1596px){
+    body{
+        background-repeat: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-image: url('HPbackground.jpg');
+    }
+}
+@media (max-width:500px) {
+    body{
+
+        background-repeat: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-image: url('HPmobile.jpg');
+    }
+}

@@ -1,0 +1,208 @@
+@font-face {
+    font-family: Benguiat;
+    src: url('BenguiatStd-Bold.otf');
+}
+
+@font-face {
+    font-family: prisma;
+    src: url('Prisma.ttf');
+}
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Benguiat;
+    background-image: url('STbackground.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.audio {
+    display: none;
+}
+
+/* start of header */
+header {
+    position: fixed;
+    top: 0;
+    display: block;
+    width: 100%;
+
+
+}
+
+nav {
+    font-family: prisma;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(255, 129, 150);
+    box-shadow: 0 0 10px rgb(255, 129, 150);
+    color: white;
+
+}
+
+.left h1 {
+    margin: 0;
+    color: white;
+    font-family: prisma;
+    /* -webkit-text-stroke: 0.1px skyblue; */
+    text-shadow: 0 0 20px rgb(70, 209, 255);
+}
+
+.navul {
+    font-size: 19px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.item {
+    margin: 5px;
+    padding: 5px;
+    background-color: rgb(177, 54, 54);
+    font-family: 'PT Sans Narrow', sans-serif;
+    border: 2px solid white;
+    list-style: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+/* end of header */
+/* start of main */
+.gameContainer {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(3, 10vw);
+    grid-template-columns: repeat(3, 10vw);
+}
+
+.box {
+    border: 2px solid red;
+    font-size: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Benguiat;
+    color: red;
+    text-shadow: 0 0 10px red;
+}
+
+.box:hover {
+    background-color: rgba(255, 125, 125, 0.507);
+    cursor: pointer;
+}
+
+.gameInfo {
+    padding: 0 34px;
+    color: rgb(255, 159, 159);
+    text-shadow: 0 0 10px red;
+    text-align: center;
+}
+
+.imgBox img {
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+.br-0 {
+    border-right: 0;
+}
+
+.bl-0 {
+    border-left: 0;
+}
+
+.bt-0 {
+    border-top: 0;
+}
+
+.bb-0 {
+    border-bottom: 0;
+}
+
+#reset {
+    margin: 10px 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: rgb(177, 54, 54);
+    color: white;
+    border: 2px solid white;
+}
+
+.info {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 665px) {
+    .gameContainer {
+        flex-wrap: wrap;
+    }
+
+    .gameInfo {
+        margin-top: 40px;
+    }
+
+    .gameInfo h1 {
+        font-size: 1.5rem;
+    }
+
+    .info {
+        font-size: medium;
+    }
+
+    .navul li a {
+        font-size: smaller;
+    }
+
+    .item {
+        padding: 2px;
+        width: fit-content;
+
+    }
+
+    nav h1 {
+        font-size: smaller;
+    }
+
+    .container {
+        display: grid;
+        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 20vw);
+    }
+}
+@media screen and (max-width: 1596px){
+    body{
+        background-repeat: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-image: url('STbackground.jpg');
+    }
+}
+@media (max-width:500px) {
+    body{
+
+        background-repeat: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-image: url('STmobile.jpg');
+    }
+}

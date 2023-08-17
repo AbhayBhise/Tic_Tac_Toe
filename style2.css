@@ -1,0 +1,189 @@
+
+
+body {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: url('SWbackground.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.audio{
+    display: none;
+}
+/* start of header */
+header {
+    position: fixed;
+    top: 0;
+    display: block;
+    width: 100%;
+    background-color: rgb(121, 255, 132);
+    box-shadow: 0px 0px 20px rgb(47, 255, 109);
+}
+
+nav {
+    color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.navul {
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item {
+    margin: 5px;
+    padding: 5px;
+    background-color: rgb(255, 156, 156);
+    box-shadow: 0 0 10px red;
+    border-radius: 5px;
+    list-style: none;
+    cursor: pointer;
+    font-size: 19px;
+}
+
+
+/* end of header */
+/* start of main */
+.gameContainer {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(3, 10vw);
+    grid-template-columns: repeat(3, 10vw);
+}
+
+.box {
+    border: 2px solid rgb(255, 169, 169);
+    font-size: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Patrick Hand SC', cursive;
+    color: rgb(157, 255, 173);
+    text-shadow: 0 0 30px rgb(238, 255, 211);
+    
+}
+
+.box:hover {
+    background-color: rgba(172, 255, 47, 0.521);
+    cursor: url('LS.png') 20 20;
+}
+
+.gameInfo {
+    padding: 0 34px;
+    color: yellow;
+    text-align: center;
+}
+
+.imgBox img {
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+.br-0 {
+    border-right: 0;
+}
+
+.bl-0 {
+    border-left: 0;
+}
+
+.bt-0 {
+    border-top: 0;
+}
+
+.bb-0 {
+    border-bottom: 0;
+}
+
+#reset {
+    margin: 10px 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: gray;
+    border: none;
+    color: yellow;
+}
+
+.info {
+    font-size: 25px;
+    font-weight: bold;
+    color: yellow;
+}
+
+@media screen and (max-width: 665px) {
+    .gameContainer {
+        flex-wrap: wrap;
+    }
+
+    .gameInfo {
+        margin-top: 40px;
+    }
+
+    .gameInfo h1 {
+        font-size: 1.5rem;
+    }
+
+    .info {
+        font-size: medium;
+    }
+
+    .navul li a {
+        font-size: smaller;
+    }
+
+    .item {
+        padding: 2px;
+        width: fit-content;
+
+    }
+
+    nav h1 {
+        font-size: smaller;
+    }
+
+    .container {
+        display: grid;
+        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 20vw);
+    }
+}
+@media  (max-width: 1596px) {
+    body{
+
+        background-repeat: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-image: url('SWbackground.jpg');
+
+    }
+    .imgBox  img {
+        max-width: 190px;
+    }
+}
+@media (max-width:500px) {
+    body{
+
+        background-repeat: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-image: url('SWmobile.jpg');
+    }
+}
