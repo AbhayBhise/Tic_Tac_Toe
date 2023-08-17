@@ -142,9 +142,10 @@
         grid-template-columns: repeat(3, 20vw);
     }
 }
-@media (max-width:500px) {
+@media (max-width:1000px) {
     nav{
         width:100%;
+            font-size:-20%;
     }
         
 }
