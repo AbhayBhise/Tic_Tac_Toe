@@ -78,8 +78,8 @@ function starWars() {
     music.pause();
     document.querySelectorAll('.link')[0].setAttribute('href', 'style2.css');
     audioTurn = new Audio('lightsaber-sound.mp3');
-    document.querySelector('.img').setAttribute('src', 'yoda.gif');
     document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "0";
+    document.querySelector('.img').setAttribute('src', 'yoda.gif');
     document.querySelector('audio').setAttribute('src', 'SW.mp3');
     SW = document.querySelector('audio');
     SW.play();
@@ -90,8 +90,8 @@ function strangerThings() {
     music.pause();
     document.querySelectorAll('.link')[0].setAttribute('href', 'style3.css');
     audioTurn = new Audio('can.mp3');
-    document.querySelector('.img').setAttribute('src', 'YO.gif');
     document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "0";
+    document.querySelector('.img').setAttribute('src', 'YO.gif');
     document.querySelector('audio').setAttribute('src', 'Stranger Things.mp3');
     ST = document.querySelector('audio');
     ST.play();
@@ -101,8 +101,8 @@ function harryPotter() {
     music.pause();
     document.querySelectorAll('.link')[0].setAttribute('href', 'style4.css');
     audioTurn = new Audio('wingardium-leviosa-2.mp3');
-    document.querySelector('.img').setAttribute('src', 'yes.gif');
     document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "0";
+    document.querySelector('.img').setAttribute('src', 'yes.gif');
     document.querySelector('audio').setAttribute('src', 'HPTheme.mp3');
     HP = document.querySelector('audio');
     HP.play();
