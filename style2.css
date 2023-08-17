@@ -177,7 +177,7 @@ nav {
         max-width: 190px;
     }
 }
-@media (max-width:900px) {
+@media (max-width:1000px) {
     body{
 
         background-repeat: center center;
