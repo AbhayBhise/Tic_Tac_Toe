@@ -143,12 +143,11 @@
     .info{
         font-size: medium;
     }
-    .navul li a{
-        font-size: smaller;
-    }
+
     .item{
         padding: 2px;
         width: fit-content;
+        margin:2px;
         
     }
     nav h1{
