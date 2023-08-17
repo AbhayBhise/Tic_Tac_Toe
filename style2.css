@@ -126,42 +126,49 @@ nav {
     color: yellow;
 }
 
-@media screen and (max-width: 665px) {
-    .gameContainer {
+@media screen and (max-width: 1000px){
+    .gameContainer{
         flex-wrap: wrap;
+            
     }
-
-    .gameInfo {
+    .gameInfo{
         margin-top: 40px;
     }
-
-    .gameInfo h1 {
-        font-size: 1.5rem;
+    .gameInfo h1{
+        font-size:1.5rem;
     }
-
-    .info {
+    .info{
         font-size: medium;
     }
-
-    .navul li a {
-        font-size: smaller;
+    .navul li{
+        font-size: 16px;
     }
-
-    .item {
+    .item{
         padding: 2px;
         width: fit-content;
+            margin:1px;
 
     }
-
-    nav h1 {
-        font-size: smaller;
+    nav h1{
+        font-size: 16px;
     }
-
-    .container {
+    .container{
         display: grid;
         grid-template-rows: repeat(3, 20vw);
         grid-template-columns: repeat(3, 20vw);
     }
+            nav{
+        width:100%;
+            font-size:-20%;
+    }
+.navul li {
+font-size:10px;
+padding:2px;
+                    
+}
+.left{
+        text-align:center;
+        }
 }
 @media  (max-width: 1596px) {
     body{
