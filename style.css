@@ -116,7 +116,7 @@
 @media screen and (max-width: 1000px){
     .gameContainer{
         flex-wrap: wrap;
-            margin-top:10px;
+            margin-top:100px;
     }
     .gameInfo{
         margin-top: 40px;
