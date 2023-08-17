@@ -67,10 +67,10 @@ reset.addEventListener('click', () => {
 function defaultAct() {
     music.pause();
     localStorage.clear();
-    audioTurn = new Audio('Pencil.mp3');
     document.querySelectorAll('.link')[0].setAttribute('href', 'style.css');
-    document.querySelector('audio').setAttribute('src', 'BGM.mp3');
+    audioTurn = new Audio('Pencil.mp3');
    document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "0";
+    document.querySelector('audio').setAttribute('src', 'BGM.mp3');
     def = document.querySelector('audio');
     def.play();
     def.loop();
