@@ -169,7 +169,7 @@
         background-image: url('HPbackground.jpg');
     }
 }
-@media (max-width:500px) {
+@media (max-width:900px) {
     body{
 
         background-repeat: center center;
