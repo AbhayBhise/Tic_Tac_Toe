@@ -1,7 +1,5 @@
-console.log("Welcome to Tac Tac Toe");
 let music = new Audio('BGM.mp3');
 let audioTurn = new Audio('Pencil.mp3');
-let gameOver = new Audio('BGM.mp3');
 let turn = "X";
 let isgameOver = false;
 // Function to change the turn
