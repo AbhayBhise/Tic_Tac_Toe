@@ -105,7 +105,7 @@ function harryPotter() {
     music.pause();
     localStorage.clear();
     document.querySelectorAll('.link')[0].setAttribute('href', 'style4.css');
-    audioTurn = new Audio('wingardium-leviosa-2.mp3');
+    audioTurn = new Audio('Lumos.mp3');
     document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "0";
     document.querySelector('.img').setAttribute('src', 'yes.gif');
     document.querySelector('audio').setAttribute('src', 'HPTheme.mp3');
