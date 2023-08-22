@@ -111,7 +111,7 @@ function harryPotter() {
     document.querySelector('audio').setAttribute('src', 'HPTheme.mp3');
     HP = document.querySelector('audio');
     HP.play();
-    HP.loop('true');
+    HP.loop(true);
 
 }
 
