@@ -114,8 +114,7 @@ function harryPotter() {
     HP.loop(true);
 
 }
-window.addEventListener('beforeunload', function (event) {
-  // Pause the audio here
-  music.pause();
-});
+function mute(){
+    music.pause();
+};
 
