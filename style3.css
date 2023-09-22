@@ -97,6 +97,7 @@ nav {
     align-items: center;
     font-family: Benguiat;
     color: red;
+    text-border: 2px solid black;
     text-shadow: 0 0 10px black;
 }
 
