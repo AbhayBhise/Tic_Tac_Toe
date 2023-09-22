@@ -97,7 +97,7 @@ nav {
     align-items: center;
     font-family: Benguiat;
     color: red;
-    text-shadow: 0 0 10px red;
+    text-shadow: 0 0 10px black;
 }
 
 .box:hover {
