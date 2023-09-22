@@ -115,6 +115,6 @@ function harryPotter() {
 
 }
 function mute(){
-    music.pause();
+    document.querySelector('audio').pause();
 };
 
