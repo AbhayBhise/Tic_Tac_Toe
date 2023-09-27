@@ -220,14 +220,14 @@ padding:2px;
     }
         nav{
         width:100%;
-            font-size:-20%;
+            font-size:-10%;
     }
         .navul {
-    font-size:-20%;
+    font-size:10%;
     }
     .navul li {
-font-size:16px;
-padding:2px;
+font-size:10px;
+padding:1px;
                     
 }
 .left{
