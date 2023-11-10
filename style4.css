@@ -12,6 +12,7 @@
             background-repeat: no-repeat;
             background-size:100%;
             color: goldenrod;
+            
             -webkit-text-stroke: 0.3px rgb(114, 97, 0);
         }
         .audio{
@@ -80,15 +81,6 @@
             align-items: center;
             font-family: HP;
             
-            cursor: url('wand.cur') ;
-        }
-
-        .box:hover {
-            background: linear-gradient(white, rgba(137, 255, 255, 0.349));
-
-        }
-
-        .gameInfo {
             text-align: center;
             padding: 0 34px;
         }
