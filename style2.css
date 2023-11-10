@@ -73,12 +73,12 @@ nav {
     font-family: 'Patrick Hand SC', cursive;
     color: rgb(157, 255, 173);
     text-shadow: 0 0 30px rgb(238, 255, 211);
-    
+    cursor: url('LS.png') 20 20;
 }
 
 .box:hover {
     background-color: rgba(172, 255, 47, 0.521);
-    cursor: url('LS.png') 20 20;
+    
 }
 
 .gameInfo {
