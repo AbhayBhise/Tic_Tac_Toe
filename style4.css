@@ -74,17 +74,17 @@
 
         .box {
             border: 2px solid skyblue;
-            font-size: 8vw;
+            font-size: 6vw;
             display: flex;
             justify-content: center;
             align-items: center;
             font-family: HP;
+            
+            cursor: url('wand.cur') ;
         }
 
         .box:hover {
             background: linear-gradient(white, rgba(137, 255, 255, 0.349));
-
-            cursor: url('wand.cur') ;
 
         }
 
