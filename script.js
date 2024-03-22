@@ -2,11 +2,13 @@ let music = new Audio('BGM.mp3');
 let audioTurn = new Audio('Pencil.mp3');
 let turn = "X";
 let isgameOver = false;
+
 // Function to change the turn
 const changeTurn = () => {
     return turn === "X" ? "O" : "X";
 }
-// Function to check for a Win
+
+// Function to check for a Win or Tie
 const checkWin = () => {
     let boxtext = document.getElementsByClassName("boxtext");
     let wins = [
@@ -19,15 +21,31 @@ const checkWin = () => {
         [0, 4, 8],
         [2, 4, 6],
     ]
+    let filledBoxes = 0;
     wins.forEach(e => {
         if (boxtext[e[0]].innerText === boxtext[e[1]].innerText && boxtext[e[2]].innerText === boxtext[e[1]].innerText && boxtext[e[0]].innerText !== "") {
             document.querySelector('.info').innerText = boxtext[e[0]].innerText + " Won";
             isgameOver = true;
+            Array.from(document.getElementsByClassName("box")).forEach(box => {
+                box.setAttribute("disabled", "true");
+            });
             document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "300px";
-
         };
-    })
+    });
+    // Check for a tie
+    Array.from(boxtext).forEach(box => {
+        if (box.innerText !== "") {
+            filledBoxes++;
+        }
+    });
+    if (filledBoxes === 9 && !isgameOver) {
+        document.querySelector('.info').innerText = "It's a Tie!";
+        isgameOver = true;
+        document.querySelector('.imgBox').getElementsByTagName('img')[0].setAttribute('src', 'tie-image.gif');
+        document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "300px";
+    }
 };
+
 // Game Logic
 music.play();
 
@@ -35,21 +53,28 @@ let boxes = document.getElementsByClassName("box");
 Array.from(boxes).forEach(element => {
     let boxtext = element.querySelector(".boxtext");
     element.addEventListener("click", () => {
-        if (boxtext.innerText === '') {
+        if (boxtext.innerText === '' && !isgameOver) {
             boxtext.innerText = turn;
             turn = changeTurn();
             audioTurn.play();
             checkWin();
             if (!isgameOver) {
                 document.getElementsByClassName("info")[0].innerText = "Turn of " + turn;
+            } else {
+                Array.from(document.getElementsByClassName("box")).forEach(box => {
+                    box.setAttribute("disabled", "true");
+                });
             }
         }
-
     });
 })
 
 // Add on click listener to reset button
 reset.addEventListener('click', () => {
+    // Enable the boxes and reset the game state
+    Array.from(boxes).forEach(box => {
+        box.removeAttribute("disabled");
+    });
     let boxtexts = document.querySelectorAll(".boxtext");
     Array.from(boxtexts).forEach(element => {
         element.innerText = "";
@@ -58,8 +83,10 @@ reset.addEventListener('click', () => {
     isgameOver = false;
     document.getElementsByClassName("info")[0].innerText = "Turn of " + turn;
     document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "0";
-    
+    document.querySelector('.imgBox').getElementsByTagName('img')[0].setAttribute('src', 'minion-congrats.gif');
 });
+
+// Other functions (defaultAct, starWars, strangerThings, harryPotter, mute) remain unchanged
 
 
 function defaultAct() {
