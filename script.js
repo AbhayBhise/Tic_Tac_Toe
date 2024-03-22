@@ -83,6 +83,24 @@ reset.addEventListener('click', () => {
     isgameOver = false;
     document.getElementsByClassName("info")[0].innerText = "Turn of " + turn;
     document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "0";
+    let theme = document.querySelectorAll('.link')[0].getAttribute('href');
+    let tieImageSrc = '';
+    switch(theme) {
+        case 'style.css':
+            document.querySelector('.imgBox').getElementsByTagName('img')[0].setAttribute('src', 'minion-congrats.gif');
+            break;
+        case 'style2.css':
+            document.querySelector('.imgBox').getElementsByTagName('img')[0].setAttribute('src', 'yoda.gif');
+            break;
+        case 'style3.css':
+            document.querySelector('.imgBox').getElementsByTagName('img')[0].setAttribute('src', 'YO.gif');
+            break;
+        case 'style4.css':
+            document.querySelector('.imgBox').getElementsByTagName('img')[0].setAttribute('src', 'yes.gif');
+            break;
+        default:
+            document.querySelector('.imgBox').getElementsByTagName('img')[0].setAttribute('src', 'minion-congrats.gif'); // Default image if theme not found
+    }
     // document.querySelector('.imgBox').getElementsByTagName('img')[0].setAttribute('src', 'minion-congrats.gif');
 });
 
