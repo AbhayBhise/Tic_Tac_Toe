@@ -41,7 +41,7 @@ const checkWin = () => {
     if (filledBoxes === 9 && !isgameOver) {
         document.querySelector('.info').innerText = "It's a Tie!";
         isgameOver = true;
-        document.querySelector('.imgBox').getElementsByTagName('img')[0].setAttribute('src', 'tie-image.gif');
+        document.querySelector('.imgBox').getElementsByTagName('img')[0].setAttribute('src', 'try.gif');
         document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "300px";
     }
 };
@@ -83,7 +83,7 @@ reset.addEventListener('click', () => {
     isgameOver = false;
     document.getElementsByClassName("info")[0].innerText = "Turn of " + turn;
     document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "0";
-   // document.querySelector('.imgBox').getElementsByTagName('img')[0].setAttribute('src', 'minion-congrats.gif');
+    // document.querySelector('.imgBox').getElementsByTagName('img')[0].setAttribute('src', 'minion-congrats.gif');
 });
 
 // Other functions (defaultAct, starWars, strangerThings, harryPotter, mute) remain unchanged
