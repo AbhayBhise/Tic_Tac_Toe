@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" oncontextmenu="return false">
 
 <head>
     <meta charset="UTF-8">
@@ -27,7 +27,7 @@
                     <li onclick="starWars()" class="item">Star Wars</li>
                     <li onclick="strangerThings()" class="item">Stranger Things</li>
                     <li onclick="harryPotter()" class="item">Harry Potter</li>
-                     <li onclick="mute()" class="item">Mute Audio</li>
+                    <li onclick="mute()" class="item">Mute Audio</li>
                 </ul>
             </div>
         </nav>
@@ -50,9 +50,19 @@
                 <div>
                     <span class="info">Turn of X</span>
                     <button id="reset">Reset</button>
+                    <span id="timer"></span>
                 </div>
                 <div class="imgBox">
                     <img class="img" src="minion-congrats.gif" alt="">
+                </div>
+                <div id="scorebox">
+                    <h2>SCORE:</h2>
+                    <p class="score">X: <span  id="scoreX"></span></p>
+                    <p class="score">O: <span  id="scoreO"></span></p>
+                    <p class="score">TIES: <span  id="ties"></span></p>
+                    
+                    
+                    
                 </div>
             </div>
         </div>
