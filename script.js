@@ -2,6 +2,10 @@ let music = new Audio('BGM.mp3');
 let audioTurn = new Audio('Pencil.mp3');
 let turn = "X";
 let isgameOver = false;
+let scoreX = 0;
+let scoreO = 0;
+let ties = 0;
+let timerInterval; // Variable to store the interval
 
 // Function to change the turn
 const changeTurn = () => {
@@ -26,10 +30,18 @@ const checkWin = () => {
         if (boxtext[e[0]].innerText === boxtext[e[1]].innerText && boxtext[e[2]].innerText === boxtext[e[1]].innerText && boxtext[e[0]].innerText !== "") {
             document.querySelector('.info').innerText = boxtext[e[0]].innerText + " Won";
             isgameOver = true;
+            if (boxtext[e[0]].innerText === "X") {
+                scoreX++;
+            } else {
+                scoreO++;
+            }
+            updateScores();
             Array.from(document.getElementsByClassName("box")).forEach(box => {
                 box.setAttribute("disabled", "true");
             });
             document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "300px";
+        
+            ;
         };
     });
     // Check for a tie
@@ -41,10 +53,22 @@ const checkWin = () => {
     if (filledBoxes === 9 && !isgameOver) {
         document.querySelector('.info').innerText = "It's a Tie!";
         isgameOver = true;
+        ties++;
+        updateScores();
         document.querySelector('.imgBox').getElementsByTagName('img')[0].setAttribute('src', 'try.gif');
         document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "300px";
+    
+;
     }
+    
 };
+
+// Function to update scores
+const updateScores = () => {
+    document.getElementById("scoreX").innerText = scoreX;
+    document.getElementById("scoreO").innerText = scoreO;
+    document.getElementById("ties").innerText = ties;
+}
 
 // Game Logic
 music.play();
@@ -67,10 +91,10 @@ Array.from(boxes).forEach(element => {
             }
         }
     });
-})
+});
 
 // Add on click listener to reset button
-reset.addEventListener('click', () => {
+reset.addEventListener('click', function reset() {
     // Enable the boxes and reset the game state
     Array.from(boxes).forEach(box => {
         box.removeAttribute("disabled");
@@ -101,12 +125,51 @@ reset.addEventListener('click', () => {
         default:
             document.querySelector('.imgBox').getElementsByTagName('img')[0].setAttribute('src', 'minion-congrats.gif'); // Default image if theme not found
     }
-    // document.querySelector('.imgBox').getElementsByTagName('img')[0].setAttribute('src', 'minion-congrats.gif');
+  function resetGif() {};
+
+
 });
 
-// Other functions (defaultAct, starWars, strangerThings, harryPotter, mute) remain unchanged
+
+// Function to reset the grid automatically
+function resetGrid() {
+    // Reset the game state
+    let boxtexts = document.querySelectorAll(".boxtext");
+    Array.from(boxtexts).forEach(element => {
+        element.innerText = "";
+    });
+    turn = "X";
+    isgameOver = false;
+    document.querySelector('.info').innerText = "Turn of " + turn;
+    document.querySelector('.imgBox').getElementsByTagName('img')[0].style.width = "0";
+    let theme = document.querySelectorAll('.link')[0].getAttribute('href');
+    switch(theme) {
+        case 'style.css':
+            document.querySelector('.imgBox').getElementsByTagName('img')[0].setAttribute('src', 'minion-congrats.gif');
+            break;
+        case 'style2.css':
+            document.querySelector('.imgBox').getElementsByTagName('img')[0].setAttribute('src', 'yoda.gif');
+            break;
+        case 'style3.css':
+            document.querySelector('.imgBox').getElementsByTagName('img')[0].setAttribute('src', 'YO.gif');
+            break;
+        case 'style4.css':
+            document.querySelector('.imgBox').getElementsByTagName('img')[0].setAttribute('src', 'yes.gif');
+            break;
+        default:
+            document.querySelector('.imgBox').getElementsByTagName('img')[0].setAttribute('src', 'minion-congrats.gif'); // Default image if theme not found
+    }
+    // Reset the timer
+
+   
+}
 
 
+
+// Start the timer when the window loads
+window.onload = function() {
+;
+};
 function defaultAct() {
     music.pause();
     localStorage.clear();
@@ -161,5 +224,5 @@ function harryPotter() {
 }
 function mute(){
     document.querySelector('audio').pause();
+   audioTurn = new Audio();
 };
-
