@@ -46,7 +46,7 @@ const GameBoard = ({
     };
 
     return (
-        <div className="game-board">
+        <div className={`game-board ${disabled ? 'board-disabled' : ''}`}>
             <div className="board-grid">
                 {board.map((cell, index) => (
                     <div
@@ -61,6 +61,11 @@ const GameBoard = ({
             {currentPlayer && !disabled && (
                 <div className="turn-indicator">
                     <span className="player-symbol">{currentPlayer}</span>'s Turn
+                </div>
+            )}
+            {disabled && !winningLine.length && (
+                <div className="board-loading-overlay">
+                    <div className="spinner-mini"></div>
                 </div>
             )}
         </div>

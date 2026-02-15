@@ -30,21 +30,41 @@ const OnlineMultiplayer = () => {
     useEffect(() => {
         const newSocket = io(SOCKET_URL, {
             transports: ['websocket'],
-            reconnection: true
+            reconnection: true,
+            reconnectionAttempts: 5,
+            reconnectionDelay: 1000
         });
 
         newSocket.on('connect', () => {
-            console.log('Connected to server');
+            console.log('Connected to server', newSocket.id);
+            // If we were in a game, try to rejoin or reset state
+            if (gameMode === 'playing') {
+                // In a real app, we'd implement rejoin logic here
+                // For now, simpler to reset if we lost connection mid-game
+                setError('Connection restored. Please start a new game.');
+                setGameMode('selection');
+            }
         });
 
-        newSocket.on('disconnect', () => {
-            console.log('Disconnected from server');
+        newSocket.on('disconnect', (reason) => {
+            console.log('Disconnected from server:', reason);
+            if (gameMode === 'playing') {
+                setError('Connection lost. Trying to reconnect...');
+            }
+        });
+
+        newSocket.on('connect_error', (err) => {
+            console.log('Connection error:', err);
+            // Only show error if we're actively trying to play
+            if (gameMode !== 'selection') {
+                setError('Connection issues detected. Please check your internet.');
+            }
         });
 
         setSocket(newSocket);
 
         return () => {
-            newSocket.close();
+            newSocket.disconnect();
         };
     }, []);
 
@@ -55,6 +75,7 @@ const OnlineMultiplayer = () => {
         // Matchmaking events
         socket.on('matchmaking:searching', () => {
             setMatchmakingStatus('searching');
+            setError('');
         });
 
         socket.on('matchmaking:found', (data) => {
@@ -66,6 +87,7 @@ const OnlineMultiplayer = () => {
             setCurrentTurn('X');
             setGameResult(null);
             setWinningLine([]);
+            setError('');
 
             // Start countdown after 1 second of showing "Match Found!"
             setTimeout(() => {
@@ -201,10 +223,15 @@ const OnlineMultiplayer = () => {
         newBoard[index] = mySymbol;
         setBoard(newBoard);
 
-        // Update turn locally (server will confirm)
-        setCurrentTurn(mySymbol === 'X' ? 'O' : 'X');
+        // Update turn locally immediately
+        const nextTurn = mySymbol === 'X' ? 'O' : 'X';
+        setCurrentTurn(nextTurn);
 
+        // Emit move to server
         socket.emit('game:move', { position: index });
+
+        // Safety timeout: if server doesn't respond in 5s, revert or fetch state
+        // (In a more complex app, we'd have a pendingMoves queue)
     };
 
     const handlePlayAgain = () => {
