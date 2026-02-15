@@ -1,0 +1,345 @@
+/* Theme Store Page Styles */
+.theme-store-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+}
+
+.store-header {
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.store-header h1 {
+    font-size: 42px;
+    color: white;
+    font-weight: 800;
+    margin: 0;
+}
+
+.btn-back {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(-3px);
+}
+
+/* Coin Display */
+.coin-display {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 15px 25px;
+    border-radius: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.coin-icon {
+    font-size: 28px;
+    animation: coinSpin 3s ease-in-out infinite;
+}
+
+@keyframes coinSpin {
+
+    0%,
+    100% {
+        transform: rotateY(0deg);
+    }
+
+    50% {
+        transform: rotateY(180deg);
+    }
+}
+
+.coin-amount {
+    font-size: 28px;
+    font-weight: 800;
+    color: white;
+    min-width: 60px;
+    text-align: center;
+}
+
+.coin-label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Filters */
+.store-filters {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: white;
+    color: #667eea;
+    border-color: white;
+}
+
+/* Themes Grid */
+.themes-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    padding-bottom: 40px;
+}
+
+/* Theme Card */
+.theme-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    animation: cardFadeIn 0.5s ease;
+}
+
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.theme-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Theme Preview */
+.theme-preview {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.preview-board {
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    gap: 10px;
+}
+
+.preview-cell {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.theme-card:hover .preview-cell {
+    transform: scale(1.05);
+}
+
+/* Theme Info */
+.theme-info {
+    padding: 25px;
+}
+
+.theme-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.theme-info h3 {
+    font-size: 22px;
+    color: #333;
+    margin: 0;
+    font-weight: 700;
+}
+
+.rarity-badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.theme-description {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Theme Price */
+.theme-price {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #667eea;
+}
+
+.free-tag {
+    color: #4CAF50;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.price-amount {
+    font-size: 24px;
+}
+
+/* Theme Actions */
+.theme-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-purchase,
+.btn-select {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-purchase {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-purchase:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-purchase:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-select {
+    background: #4CAF50;
+    color: white;
+}
+
+.btn-select:hover:not(:disabled) {
+    background: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+}
+
+.btn-select:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.selected-indicator {
+    flex: 1;
+    padding: 14px;
+    background: #e8f5e9;
+    color: #4CAF50;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Loading & Empty States */
+.loading,
+.no-themes {
+    text-align: center;
+    padding: 100px 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .store-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .store-header h1 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .coin-display {
+        justify-content: center;
+    }
+
+    .store-filters {
+        justify-content: center;
+    }
+
+    .themes-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

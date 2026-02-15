@@ -1,0 +1,211 @@
+@font-face {
+    font-family: HP;
+    src: url(HarryPotterFont.ttf);
+}
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: HP;
+            background-image: url('HPbackground.jpg');
+            background-repeat: no-repeat;
+            background-size:100%;
+            color: goldenrod;
+            cursor: url('wand.cur');
+            -webkit-text-stroke: 0.3px rgb(114, 97, 0);
+        }
+        .audio{
+            display: none;
+        }
+        /* start of header */
+        header {
+            position: fixed;
+            top: 0;
+            display: block;
+            width: 100%;
+
+
+        }
+
+        nav {
+            
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background: linear-gradient(skyblue, white, skyblue);
+
+        }
+        .left h1{
+            margin: 0;
+            font-size: 25px;
+        }
+
+        .navul {
+            font-size: 20px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item {
+            margin: 5px;
+            padding: 5px;
+            background-color: transparent;
+            list-style: none;
+            cursor: pointer;
+        }
+
+
+        /* end of header */
+        /* start of main */
+        .gameContainer {
+
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-rows: repeat(3, 10vw);
+            grid-template-columns: repeat(3, 10vw);
+        }
+
+        .box {
+            border: 2px solid skyblue;
+            font-size: 6vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: HP;
+            
+            text-align: center;
+            padding: 0 34px;
+        }
+        .box:hover{
+           background-color: rgba(0, 255, 255, 0.274);
+           cursor: pointer;
+        }
+        .imgBox img {
+            width: 0; 
+            transition: width 0.3s ease-in-out;
+        }
+
+        .br-0 {
+            border-right: 0;
+        }
+
+        .bl-0 { 
+            border-left: 0;
+        }
+
+        .bt-0 {
+            border-top: 0;
+        }
+
+        .bb-0 {
+            border-bottom: 0;
+        }
+        #reset{
+            margin: 10px 10px;
+            padding: 5px 10px;
+            font-size: 20px;
+            font-weight:bold;
+            font-family: HP;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 10px;
+            background-color: aqua;
+            border: none;
+            outline: none;
+        }
+        .info{
+            font-size: 25px;
+            font-weight: bold;
+        }
+@media screen and (max-width: 1000px){
+    .gameContainer{
+        flex-wrap: wrap;
+            
+    }
+    .gameInfo{
+        margin-top: 40px;
+    }
+    .gameInfo h1{
+        font-size:1.5rem;
+    }
+    .info{
+        font-size: medium;
+    }
+    .navul li{
+        font-size: 16px;
+    }
+    .item{
+        padding: 2px;
+        width: fit-content;
+            margin:1px;
+
+    }
+    nav h1{
+        font-size: 16px;
+        margin:0;
+    }
+    .container{
+        display: grid;
+        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 20vw);
+    }
+            nav{
+        width:100%;
+            font-size:-20%;
+    }
+.navul li {
+font-size:10px;
+padding:2px;
+                    
+}
+.left{
+        text-align:center;
+        }
+}
+@media  (max-width: 1596px) {
+    body{
+
+        background-repeat: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-image: url('HPbackground.jpg');
+
+    }
+    .imgBox  img {
+        max-width: 190px;
+    }
+}
+@media (max-width:1000px) {
+    body{
+
+        background-repeat: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-image: url('HPmobile.jpg');
+    }
+        nav{
+        width:100%;
+            font-size:-25%;
+    }
+        .navul {
+    font-size:-25%;
+    }
+    .navul item {
+font-size:10px;
+padding:1px;
+           text-aligh:center;          
+}
+.left{
+        text-align:center;
+        }
+}
