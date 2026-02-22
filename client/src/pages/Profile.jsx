@@ -6,8 +6,8 @@ import { getUserProfile, getMatchHistory } from '../services/userService';
 import '../styles/Profile.css';
 
 const Profile = () => {
-    const { user } = useAuth();
-    const { error: showError } = useToast();
+    const { user, updateUser } = useAuth();
+    const { error: showError, success: showSuccess } = useToast();
     const navigate = useNavigate();
 
     const [profile, setProfile] = useState(null);
@@ -16,6 +16,11 @@ const Profile = () => {
     const [matchesLoading, setMatchesLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
+
+    // Edit state
+    const [isEditing, setIsEditing] = useState(false);
+    const [editData, setEditData] = useState({ username: '', avatar: '' });
+    const [saving, setSaving] = useState(false);
 
     useEffect(() => {
         fetchProfile();
@@ -28,6 +33,10 @@ const Profile = () => {
             const response = await getUserProfile();
             if (response.success) {
                 setProfile(response.data);
+                setEditData({
+                    username: response.data.username,
+                    avatar: response.data.avatar || ''
+                });
             }
         } catch (err) {
             showError(err.message || 'Failed to load profile');
@@ -49,6 +58,40 @@ const Profile = () => {
             showError(err.message || 'Failed to load match history');
         } finally {
             setMatchesLoading(false);
+        }
+    };
+
+    const handleEditToggle = () => {
+        if (isEditing) {
+            // Cancel editing - reset data
+            setEditData({
+                username: profile.username,
+                avatar: profile.avatar || ''
+            });
+        }
+        setIsEditing(!isEditing);
+    };
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setEditData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSave = async (e) => {
+        e.preventDefault();
+        try {
+            setSaving(true);
+            const response = await updateUserProfile(editData);
+            if (response.success) {
+                setProfile(response.data);
+                updateUser(response.data);
+                showSuccess('Profile updated successfully');
+                setIsEditing(false);
+            }
+        } catch (err) {
+            showError(err.message || 'Failed to update profile');
+        } finally {
+            setSaving(false);
         }
     };
 
@@ -84,21 +127,72 @@ const Profile = () => {
             <div className="profile-content">
                 {/* User Info Card */}
                 <div className="profile-card user-info-card">
-                    <div className="avatar-section">
-                        <div className="avatar">
-                            {profile.avatar ? (
-                                <img src={profile.avatar} alt="Avatar" />
-                            ) : (
-                                <span className="avatar-placeholder">
-                                    {profile.username?.charAt(0).toUpperCase()}
-                                </span>
-                            )}
+                    {isEditing ? (
+                        <form onSubmit={handleSave} className="edit-profile-form">
+                            <div className="avatar-preview-section">
+                                <div className="avatar-large">
+                                    {editData.avatar ? (
+                                        <img src={editData.avatar} alt="Preview" />
+                                    ) : (
+                                        <span className="avatar-placeholder">
+                                            {editData.username?.charAt(0).toUpperCase() || '?'}
+                                        </span>
+                                    )}
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="username">Username</label>
+                                <input
+                                    type="text"
+                                    id="username"
+                                    name="username"
+                                    value={editData.username}
+                                    onChange={handleInputChange}
+                                    required
+                                    minLength="3"
+                                    maxLength="20"
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="avatar">Avatar URL</label>
+                                <input
+                                    type="url"
+                                    id="avatar"
+                                    name="avatar"
+                                    value={editData.avatar}
+                                    onChange={handleInputChange}
+                                    placeholder="https://example.com/avatar.png"
+                                />
+                            </div>
+                            <div className="edit-actions">
+                                <button type="submit" className="btn-save" disabled={saving}>
+                                    {saving ? 'Saving...' : 'Save Changes'}
+                                </button>
+                                <button type="button" className="btn-cancel" onClick={handleEditToggle} disabled={saving}>
+                                    Cancel
+                                </button>
+                            </div>
+                        </form>
+                    ) : (
+                        <div className="avatar-section">
+                            <div className="avatar">
+                                {profile.avatar ? (
+                                    <img src={profile.avatar} alt="Avatar" />
+                                ) : (
+                                    <span className="avatar-placeholder">
+                                        {profile.username?.charAt(0).toUpperCase()}
+                                    </span>
+                                )}
+                            </div>
+                            <div className="user-details">
+                                <h2>{profile.username}</h2>
+                                <p className="email">{profile.email}</p>
+                                <button className="btn-edit-profile" onClick={handleEditToggle}>
+                                    Edit Profile
+                                </button>
+                            </div>
                         </div>
-                        <div className="user-details">
-                            <h2>{profile.username}</h2>
-                            <p className="email">{profile.email}</p>
-                        </div>
-                    </div>
+                    )}
                 </div>
 
                 {/* Stats Cards */}

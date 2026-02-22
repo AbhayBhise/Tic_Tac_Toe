@@ -130,6 +130,126 @@
 .user-details .email {
     color: #666;
     font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.btn-edit-profile {
+    padding: 8px 16px;
+    background: #f0f2f5;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-edit-profile:hover {
+    background: #e4e6e9;
+    border-color: #ccc;
+}
+
+/* Edit Profile Form */
+.edit-profile-form {
+    width: 100%;
+}
+
+.avatar-preview-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.avatar-large {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.edit-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-save {
+    flex: 2;
+    padding: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-save:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-save:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.btn-cancel {
+    flex: 1;
+    padding: 12px;
+    background: #f8f9fa;
+    border: 2px solid #eee;
+    color: #666;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel:hover:not(:disabled) {
+    background: #eee;
 }
 
 /* Stats Grid */
